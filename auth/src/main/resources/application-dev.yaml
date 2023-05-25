@@ -1,0 +1,35 @@
+mdb:
+  databases:
+    - item:
+        name: data center
+        user: crm
+        password: cRm@sH123
+        db-type: mysql
+        url: jdbc:mysql://192.168.1.252:3306/data
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver: com.mysql.cj.jdbc.Driver
+        max: 10
+        idle: 5
+      mapper: 'com.ym.apps.mapper.**.*'
+      mapper-locations: 'classpath*:mapper/*.xml'
+      name: dc
+  desc: datasource
+
+
+# log  mapper层级数据库打印
+logging:
+  level:
+    com:
+      ym:
+        core:
+          mapper: debug
+        common:
+          mdb:
+            config: debug
+
+    org:
+      camunda: info
+
+server:
+  hostUrl: http://api.crm.yinmatech.com
+

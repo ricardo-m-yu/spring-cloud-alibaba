@@ -1,0 +1,13 @@
+server:
+  port: 9801
+spring:
+  profiles:
+    active: dev
+    include:
+  application:
+    name: auth
+logging:
+  level:
+    root: info
+    com:
+      sy: debug

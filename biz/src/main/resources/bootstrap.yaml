@@ -1,0 +1,8 @@
+server:
+  port: 9110
+
+spring:
+  application:
+    name: biz
+  profiles:
+    active: dev

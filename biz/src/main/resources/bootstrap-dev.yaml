@@ -1,0 +1,22 @@
+server:
+  port: 9110
+
+spring:
+  #监控限流
+  cloud:
+    nacos:
+      server-addr: http://192.168.1.115:8108/
+      discovery:
+        group: dev
+      #配置中心
+      config:
+        server-addr: http://192.168.1.115:8108/
+        group: dev
+        file-extension: yaml
+        # 共享配置
+        shared-configs:
+          - data-id: application-dev.yaml
+            group: dev
+
+  application:
+    name: biz
