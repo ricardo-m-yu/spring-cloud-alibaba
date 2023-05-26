@@ -18,6 +18,7 @@
         <module>data</module>
         <module>biz</module>
         <module>log</module>
+        <module>consumer</module>
     </modules>
 
     <properties>

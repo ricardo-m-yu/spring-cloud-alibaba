@@ -1,8 +1,5 @@
-server:
-  port: 9110
 
 spring:
-  #监控限流
   cloud:
     nacos:
       server-addr: http://192.168.1.115:8108/
@@ -17,6 +14,13 @@ spring:
         shared-configs:
           - data-id: application-dev.yaml
             group: dev
+        extension-configs:
+          - dataId: test01.yml
+            group: dev
+    sentinel:
+      transport:
+        dashboard: 192.168.1.115:8109
+        port: 8900
 
   application:
     name: biz

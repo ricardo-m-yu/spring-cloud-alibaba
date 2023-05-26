@@ -1,6 +1,3 @@
-spring:
-  profiles:
-    include:
 logging:
   level:
     root: info

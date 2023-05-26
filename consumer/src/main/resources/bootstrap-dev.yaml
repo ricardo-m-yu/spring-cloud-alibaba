@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: http://192.168.1.115:8108/
+      discovery:
+        group: dev
+    sentinel:
+      transport:
+        dashboard: 192.168.1.115:9988
+        port: 8899
+

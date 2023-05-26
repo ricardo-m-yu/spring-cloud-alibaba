@@ -1,0 +1,6 @@
+server:
+  port: 9111
+spring:
+  application:
+    name: consumer
+
