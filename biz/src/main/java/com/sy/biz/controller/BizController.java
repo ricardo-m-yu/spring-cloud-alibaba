@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RefreshScope
-@RequestMapping("/")
+@RequestMapping("/biz")
 public class BizController {
 
     @Value("${username}")

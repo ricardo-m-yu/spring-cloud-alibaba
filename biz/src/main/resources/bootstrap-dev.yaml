@@ -11,12 +11,12 @@ spring:
         group: dev
         file-extension: yaml
         # 共享配置
-        shared-configs:
-          - data-id: application-dev.yaml
-            group: dev
-        extension-configs:
-          - dataId: test01.yml
-            group: dev
+#        shared-configs:
+#          - data-id: application-dev.yaml
+#            group: dev
+#        extension-configs:
+#          - dataId: test01.yml
+#            group: dev
     sentinel:
       transport:
         dashboard: 192.168.1.115:8109

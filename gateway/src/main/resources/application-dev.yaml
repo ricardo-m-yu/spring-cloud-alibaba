@@ -1,15 +1,5 @@
 server:
-  port: 9101
-
+  port: 9112
 spring:
-  cloud:
-    gateway:
-      routes:
-        - id: test
-          uri: https://www.baidu.com
-          predicates:
-            - Query=url,baidu
-        - id: qq
-          uri: https://www.qq.com
-          predicates:
-            - Query=url,qq
+  application:
+    name: gateway

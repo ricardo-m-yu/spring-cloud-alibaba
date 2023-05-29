@@ -1,0 +1,28 @@
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    nacos:
+      server-addr: http://192.168.1.115:8108/
+      discovery:
+        group: dev
+    sentinel:
+      transport:
+        dashboard: 192.168.1.115:9988
+        port: 8899
+    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+      routes:
+        - id: consumer-service
+          uri: https://www.qq.com
+          predicates:
+            - Method=GET,POST
+            - Path=/consumer-service/**
+        - id: biz
+          uri: lb://biz
+#          uri: http://192.168.1.125:9110
+          predicates:
+            - Method=GET,POST
+            - Path=/biz/**
