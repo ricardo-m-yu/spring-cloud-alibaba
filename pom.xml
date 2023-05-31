@@ -16,9 +16,11 @@
         <module>gateway</module>
         <module>admin</module>
         <module>data</module>
-        <module>biz</module>
+        <module>provider</module>
         <module>log</module>
         <module>consumer</module>
+        <module>seata</module>
+        <module>biz</module>
     </modules>
 
     <properties>
@@ -33,6 +35,10 @@
 
         <lombok.version>1.18.20</lombok.version>
         <fastjson.version>1.2.73</fastjson.version>
+        <mysql.version>8.0.32</mysql.version>
+        <mybatis.version>3.0.2</mybatis.version>
+        <druid.version>1.1.10</druid.version>
+        <knife4j.version>3.0.3</knife4j.version>
     </properties>
 
 
@@ -44,6 +50,7 @@
     </parent>
 
     <dependencyManagement>
+
         <!-- cloud  -->
         <dependencies>
             <dependency>
@@ -92,6 +99,30 @@
                 <version>${fastjson.version}</version>
             </dependency>
 
+            <!-- 数据库 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- ORM -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+
+            <!-- 接口文档 -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

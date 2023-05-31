@@ -1,0 +1,6 @@
+server:
+  port: 9110
+
+spring:
+  application:
+    name: provider

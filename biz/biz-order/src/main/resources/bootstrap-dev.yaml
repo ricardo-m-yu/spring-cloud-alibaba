@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: http://192.168.1.115:8108/
+      discovery:
+        group: SEATA_GROUP
+    sentinel:
+      transport:
+        dashboard: 192.168.1.115:8109
+        port: 8900
+
+
+  application:
+    name: provider
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  tx-service-group: my-tx-group
+  service:
+    vgroup-mapping:
+      my-tx-group: seata-server
+    grouplist:
+      seata-server: 192.168.1.115:8091

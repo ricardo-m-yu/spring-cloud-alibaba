@@ -1,0 +1,4 @@
+logging:
+  level:
+    com:
+      sy: debug

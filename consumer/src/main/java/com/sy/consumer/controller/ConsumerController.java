@@ -1,6 +1,8 @@
 package com.sy.consumer.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.sy.consumer.client.BizClient;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,17 +13,17 @@ import org.springframework.web.client.RestTemplate;
 
 @Slf4j
 @RestController
-@RequestMapping("/")
+@RequestMapping("/consumer")
 public class ConsumerController {
-
-    @Autowired
-    private RestTemplate restTemplate;
-
-    @Autowired
-    private LoadBalancerClient loadBalancerClient;
 
     @Value("${spring.application.name}")
     private String appName;
+    @Resource
+    private RestTemplate restTemplate;
+    @Resource
+    private BizClient bizClient;
+    @Resource
+    private LoadBalancerClient loadBalancerClient;
 
     @SentinelResource(value="hi")
     @GetMapping("/echo/app-name")
@@ -36,4 +38,8 @@ public class ConsumerController {
     }
 
 
+    @GetMapping("/username")
+    public Object getUserInfo(@RequestParam String username) {
+        return bizClient.getInfo(username);
+    }
 }
