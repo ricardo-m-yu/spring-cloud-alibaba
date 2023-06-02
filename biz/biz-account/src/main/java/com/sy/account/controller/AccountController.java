@@ -19,11 +19,13 @@ import java.math.BigDecimal;
 
 import com.sy.account.service.AccountService;
 import io.seata.core.context.RootContext;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "用户模块")
 @RestController
-@RequestMapping("/account")
+@RequestMapping("/api/account")
 public class AccountController {
 
     @Autowired

@@ -15,24 +15,15 @@
  */
 package com.sy.order.client;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigDecimal;
 
-@Component
-public class AccountClient {
+@FeignClient(value = "biz-account")
+public interface AccountClient {
 
-    @Autowired
-    private RestTemplate restTemplate;
-
-    public void debit(String userId, BigDecimal orderMoney) {
-        String url = "http://127.0.0.1:9100?userId=" + userId + "&orderMoney=" + orderMoney;
-        try {
-            restTemplate.getForEntity(url, Void.class);
-        } catch (Exception e) {
-            throw new RuntimeException(String.format("debit url %s ,error:",url),e);
-        }
-    }
+    @GetMapping("/api/account")
+    Object debit(@RequestParam String userId, @RequestParam BigDecimal orderMoney);
 }

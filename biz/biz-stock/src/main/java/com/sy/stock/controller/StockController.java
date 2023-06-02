@@ -20,13 +20,15 @@ import java.sql.SQLException;
 import com.sy.stock.domain.Stock;
 import com.sy.stock.service.StockService;
 import io.seata.core.context.RootContext;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+@Tag(name = "库存模块")
 @RequestMapping("/api/stock")
 @RestController
 public class StockController {
@@ -34,6 +36,7 @@ public class StockController {
     @Autowired
     StockService stockService;
 
+    @Operation(summary = "用户金额")
     @GetMapping(value = "/deduct")
     public void deduct(@RequestParam String commodityCode, @RequestParam Integer count) throws SQLException {
         System.out.println("stock XID " + RootContext.getXID());

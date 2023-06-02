@@ -17,3 +17,21 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
 
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+    swagger-model-name: 实体类列表
+  gateway:
+    strategy: discover
+    discover:
+      version: openapi3
+
+#  enable-aggregation: true
+#  nacos:
+#    enable: true
+#    service-url: http://192.168.1.115:8108/
+#    routes:
+#      - name: 订单服务
+#        service-name: service-order
+#        location: /v2/api-docs?group=default

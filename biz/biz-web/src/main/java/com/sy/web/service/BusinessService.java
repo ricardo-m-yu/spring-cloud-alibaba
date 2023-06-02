@@ -19,15 +19,14 @@ import com.sy.web.client.OrderClient;
 import com.sy.web.client.StockClient;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class BusinessService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(BusinessService.class);
 
     @Autowired
     private StockClient stockClient;
@@ -43,7 +42,7 @@ public class BusinessService {
      */
     @GlobalTransactional
     public void purchase(String userId, String commodityCode, int orderCount) {
-        LOGGER.info("purchase begin ... xid: " + RootContext.getXID());
+        log.info("purchase begin ... xid: " + RootContext.getXID());
         stockClient.deduct(commodityCode, orderCount);
         orderClient.create(userId, commodityCode, orderCount);
     }

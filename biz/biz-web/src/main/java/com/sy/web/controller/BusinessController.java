@@ -16,14 +16,15 @@
 package com.sy.web.controller;
 
 import com.sy.web.service.BusinessService;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-@Api(tags = "业务服务")
+@Tag(name = "整合模块")
 @RequestMapping("/api/business")
 @RestController
 public class BusinessController {
@@ -36,7 +37,7 @@ public class BusinessController {
      *
      * @return
      */
-    @RequestMapping("/purchase/commit")
+    @GetMapping("/purchase/commit")
     public Boolean purchaseCommit(HttpServletRequest request) {
         businessService.purchase("1001", "2001", 1);
         return true;
@@ -47,7 +48,7 @@ public class BusinessController {
      *
      * @return
      */
-    @RequestMapping("/purchase/rollback")
+    @GetMapping("/purchase/rollback")
     public Boolean purchaseRollback() {
         try {
             businessService.purchase("1002", "2001", 1);

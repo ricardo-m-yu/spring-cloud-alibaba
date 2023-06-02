@@ -3,15 +3,14 @@ spring:
     nacos:
       server-addr: http://192.168.1.115:8108/
       discovery:
-        group: SEATA_GROUP
+        group: dev
     sentinel:
       transport:
         dashboard: 192.168.1.115:8109
         port: 8900
 
-
   application:
-    name: provider
+    name: biz-web
 seata:
   enabled: true
   application-id: ${spring.application.name}

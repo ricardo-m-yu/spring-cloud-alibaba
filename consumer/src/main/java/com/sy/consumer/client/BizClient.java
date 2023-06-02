@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Component
-@FeignClient(value = "biz")
+@FeignClient(value = "provider")
 public interface BizClient {
 
     @GetMapping("/biz/info")

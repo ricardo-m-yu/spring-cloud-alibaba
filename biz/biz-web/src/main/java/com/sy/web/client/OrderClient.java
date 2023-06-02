@@ -15,23 +15,12 @@
  */
 package com.sy.web.client;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-@Component
-public class OrderClient {
-
-    @Autowired
-    private RestTemplate restTemplate;
-
-    public void create(String userId, String commodityCode, int orderCount) {
-        String url = "http://127.0.0.1:9201/api/order/debit?userId=" + userId + "&commodityCode=" + commodityCode
-            + "&count=" + orderCount;
-        try {
-            restTemplate.getForEntity(url, Void.class);
-        } catch (Exception e) {
-            throw new RuntimeException(String.format("create url %s ,error:", url));
-        }
-    }
+@FeignClient(value = "biz-order")
+public interface OrderClient {
+    @GetMapping("/api/order/debit")
+    Object create(@RequestParam String userId, @RequestParam String commodityCode, @RequestParam Integer count);
 }

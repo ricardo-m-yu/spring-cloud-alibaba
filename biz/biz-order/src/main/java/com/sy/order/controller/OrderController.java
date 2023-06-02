@@ -17,12 +17,14 @@ package com.sy.order.controller;
 
 import com.sy.order.service.OrderService;
 import io.seata.core.context.RootContext;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "订单模块")
 @RequestMapping("/api/order")
 @RestController
 public class OrderController {
