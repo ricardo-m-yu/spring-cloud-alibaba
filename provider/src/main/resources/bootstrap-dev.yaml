@@ -1,5 +1,6 @@
-
 spring:
+  application:
+    name: provider
   cloud:
     nacos:
       server-addr: http://192.168.1.115:8108/
@@ -22,5 +23,19 @@ spring:
         dashboard: 192.168.1.115:8109
         port: 8900
 
-  application:
-    name: provider
+# rocket mq 配置
+    stream:
+      rocketmq:
+        binder:
+          name-server: 192.168.1.115:9876
+      bindings:
+        test-out-0:
+          destination: test-topic
+          content-type: application/json
+          group: test-group
+        dev-out-0:
+          destination: dev-topic
+          content-type: application/json
+          group: dev-group
+
+

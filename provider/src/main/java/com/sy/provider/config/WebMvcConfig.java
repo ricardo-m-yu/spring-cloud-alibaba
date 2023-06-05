@@ -1,6 +1,6 @@
-package com.sy.biz.config;
+package com.sy.provider.config;
 
-import com.sy.biz.interceptor.RequestInterceptor;
+import com.sy.provider.interceptor.RequestInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

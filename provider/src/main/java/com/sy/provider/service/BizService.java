@@ -1,4 +1,4 @@
-package com.sy.biz.service;
+package com.sy.provider.service;
 
 import org.springframework.stereotype.Service;
 

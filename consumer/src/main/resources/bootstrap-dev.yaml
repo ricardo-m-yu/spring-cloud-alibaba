@@ -9,3 +9,29 @@ spring:
         dashboard: 192.168.1.115:9988
         port: 8899
 
+    # rocket mq 配置
+    stream:
+      rocketmq:
+        binder:
+          name-server: 192.168.1.115:9876
+
+
+      function:
+        definition: test;dev
+      bindings:
+
+        test-in-0:
+          destination: test-topic
+          content-type: application/json
+          group: test-group
+          consumer:
+            instance-count: 3
+            concurrency: 5
+
+        dev-in-0:
+          destination: dev-topic
+          content-type: application/json
+          group: dev-group
+          consumer:
+            instance-count: 3
+            concurrency: 5

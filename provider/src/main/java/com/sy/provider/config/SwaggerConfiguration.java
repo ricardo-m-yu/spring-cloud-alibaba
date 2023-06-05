@@ -1,4 +1,4 @@
-package com.sy.web.config;
+package com.sy.provider.config;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import io.swagger.v3.oas.models.OpenAPI;

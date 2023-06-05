@@ -1,4 +1,4 @@
-package com.sy.biz.base.config;
+package com.sy.provider.base.config;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import io.swagger.annotations.Api;

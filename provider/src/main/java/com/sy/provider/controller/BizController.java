@@ -1,6 +1,6 @@
-package com.sy.biz.controller;
+package com.sy.provider.controller;
 
-import com.sy.biz.service.BizService;
+import com.sy.provider.service.BizService;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
