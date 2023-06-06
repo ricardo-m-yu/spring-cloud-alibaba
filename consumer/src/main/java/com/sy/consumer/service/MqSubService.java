@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.context.annotation.Bean;
 import org.springframework.messaging.Message;
+import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
@@ -18,16 +19,20 @@ import java.util.function.Consumer;
 public class MqSubService {
 
     @Bean
-    public Consumer<Object> test() {
+    public Consumer<Message<Person>> test() {
         return message -> {
-            log.info("消息 test：" + message.toString() + "__"  );
+            MessageHeaders headers = message.getHeaders();
+            Person payload = message.getPayload();
+            log.info("消息 test：" + payload + "__" + headers);
         };
     }
 
     @Bean
-    public Consumer<Object> dev() {
+    public Consumer<Message<Person>> dev() {
         return message -> {
-            log.info("消息 dev：" + message.toString() + "__"  );
+            MessageHeaders headers = message.getHeaders();
+            Person payload = message.getPayload();
+            log.info("消息 dev：" + payload + "__" + headers);
         };
     }
 }

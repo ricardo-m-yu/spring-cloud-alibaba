@@ -21,7 +21,7 @@ public class MqSendController {
 
     @Operation(summary = "发送")
     @PostMapping
-    public void send(@RequestParam String channel, @RequestParam String message) {
-        mqSendService.send(channel, message);
+    public void send(@RequestParam String channel, @RequestParam String message, @RequestParam String tag, @RequestParam String keys) {
+        mqSendService.send(channel, message, tag, keys);
     }
 }
