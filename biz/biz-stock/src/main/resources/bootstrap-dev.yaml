@@ -10,8 +10,6 @@ spring:
         port: 8900
 
 
-  application:
-    name: provider
 seata:
   enabled: true
   application-id: ${spring.application.name}
@@ -21,3 +19,16 @@ seata:
       my-tx-group: seata-server
     grouplist:
       seata-server: 192.168.1.115:8091
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://192.168.1.115:8112/api/v2/spans
+      connect-timeout: 3s
+
+logging:
+  pattern:
+    level: ${spring.application.name:},%X{traceId:-},%X{spanId:-} %5p

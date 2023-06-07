@@ -4,3 +4,10 @@ server:
 spring:
   application:
     name: provider
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

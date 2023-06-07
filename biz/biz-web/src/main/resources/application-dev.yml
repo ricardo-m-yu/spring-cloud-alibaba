@@ -1,6 +1,7 @@
 server:
   port: 9203
 spring:
+
   mvc:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER

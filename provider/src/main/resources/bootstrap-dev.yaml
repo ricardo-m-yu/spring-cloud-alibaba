@@ -1,6 +1,7 @@
 spring:
   application:
     name: provider
+
   cloud:
     nacos:
       server-addr: http://192.168.1.115:8108/
@@ -38,4 +39,15 @@ spring:
           content-type: application/json
           group: dev-group
 
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://192.168.1.115:8112/api/v2/spans
+      connect-timeout: 3s
 
+logging:
+  pattern:
+    level: ${spring.application.name:},%X{traceId:-},%X{spanId:-} %5p

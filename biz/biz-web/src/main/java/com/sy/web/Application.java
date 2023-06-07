@@ -23,7 +23,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableFeignClients
 @MapperScan(basePackages = "com.sy")
-@SpringBootApplication(scanBasePackages = "com.sy")
+@SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {

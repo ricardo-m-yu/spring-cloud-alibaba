@@ -41,6 +41,9 @@
         <knife4j.version>4.1.0</knife4j.version>
         <knife4j-gateway.version>4.1.0</knife4j-gateway.version>
         <rocketmq.version>2.2.2</rocketmq.version>
+        <zipkin.version>2.2.8.RELEASE</zipkin.version>
+        <sleuth.version>3.1.7</sleuth.version>
+        <micrometer-tracing.version>1.1.1</micrometer-tracing.version>
     </properties>
 
 
@@ -89,6 +92,14 @@
                 <version>${spring.boot.admin.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-tracing-bom</artifactId>
+                <version>${micrometer-tracing.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!-- 第三方工具 -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -132,19 +143,18 @@
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-spring-boot-starter -->
-<!--            <dependency>-->
-<!--                <groupId>org.apache.rocketmq</groupId>-->
-<!--                <artifactId>rocketmq-spring-boot-starter</artifactId>-->
-<!--                <version>${rocketmq.version}</version>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.apache.rocketmq</groupId>-->
+            <!--                <artifactId>rocketmq-spring-boot-starter</artifactId>-->
+            <!--                <version>${rocketmq.version}</version>-->
+            <!--            </dependency>-->
 
             <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-stream-rocketmq -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
-                <version>2022.0.0.0-RC2</version>
+                <version>${spring.cloud.alibaba.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 
