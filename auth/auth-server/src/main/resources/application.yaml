@@ -1,5 +1,3 @@
-server:
-  port: 9801
 spring:
   profiles:
     active: dev

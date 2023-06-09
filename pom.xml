@@ -29,8 +29,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.cloud.alibaba.version>2022.0.0.0-RC2</spring.cloud.alibaba.version>
-        <spring.cloud.version>2022.0.0</spring.cloud.version>
-        <spring.boot.version>3.0.2</spring.boot.version>
+        <spring.cloud.version>2022.0.3</spring.cloud.version>
+        <spring.boot.version>3.1.0</spring.boot.version>
         <spring.boot.admin.version>2.5.1</spring.boot.admin.version>
 
         <lombok.version>1.18.20</lombok.version>
@@ -50,9 +50,16 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.2</version>
+        <version>3.1.0</version>
         <relativePath/>
     </parent>
+
+<!--    <dependencies>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-dependencies</artifactId>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
 
     <dependencyManagement>
 

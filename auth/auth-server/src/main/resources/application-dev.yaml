@@ -1,0 +1,14 @@
+server:
+  port: 9000
+
+#logging:
+#  level:
+#    org.springframework.security: trace
+
+logging:
+  level:
+    root: info
+    #    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: trace
+    #    org.springframework.security: debug
+    org.springframework.security.web.FilterChainProxy: trace # 过滤器执行顺序
+    org.springframework.security.web.access.ExceptionTranslationFilter: trace #异常处理

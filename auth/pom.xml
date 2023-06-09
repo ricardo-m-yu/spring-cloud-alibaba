@@ -11,6 +11,7 @@
 
     <groupId>com.sy</groupId>
     <artifactId>auth</artifactId>
+    <packaging>pom</packaging>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -18,11 +19,32 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <modules>
+        <module>auth-client</module>
+        <module>auth-server</module>
+    </modules>
+
     <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>com.sy</groupId>-->
+<!--            <artifactId>common</artifactId>-->
+<!--            <version>1.0-SNAPSHOT</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
+
+        <!--        &lt;!&ndash;安全模块&ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.security.oauth.boot</groupId>-->
+        <!--            <artifactId>spring-security-oauth2-autoconfigure</artifactId>-->
+        <!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.security</groupId>-->
+<!--            <artifactId>spring-security-oauth2-authorization-server</artifactId>-->
+<!--            <version>1.1.0</version>-->
+<!--        </dependency>-->
     </dependencies>
 </project>

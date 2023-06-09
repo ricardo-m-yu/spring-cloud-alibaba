@@ -26,6 +26,12 @@ spring:
           predicates:
             - Method=GET,POST
             - Path=/biz/**
+  security:
+    oauth2:
+      authorizationserver:
+        client:
+
+
 
 knife4j:
   gateway:

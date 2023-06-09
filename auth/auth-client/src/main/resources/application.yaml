@@ -1,0 +1,28 @@
+server:
+  port: 9001
+
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: debug
+    org.springframework.security: debug
+    org.springframework.security.oauth2: debug
+
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          test-provider1:
+            issuer-uri: http://127.0.0.1:9000
+        registration:
+          oidc-client:
+            client-id: oidc-client
+            client-name: 测试客户端
+            provider: test-provider1
+            redirect-uri: '{baseUrl}/{action}/oauth2/code/{registrationId}'
+            authorization-grant-type: authorization_code
+            scope:
+              - openid
+              - profile
