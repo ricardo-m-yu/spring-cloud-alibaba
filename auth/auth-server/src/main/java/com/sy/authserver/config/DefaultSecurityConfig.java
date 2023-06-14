@@ -43,34 +43,38 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class DefaultSecurityConfig {
 
 
-	@Bean
-	@Order(2)
-	public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
-			throws Exception {
-		http
-				.authorizeHttpRequests((authorize) -> authorize
-								.requestMatchers(new AntPathRequestMatcher("/actuator/**"),
-										new AntPathRequestMatcher("/oauth2/**"),
-										new AntPathRequestMatcher("/**/*.json"),
-										new AntPathRequestMatcher("/**/*.html")).permitAll()
-						.anyRequest().authenticated()
-				)
-				// Form login handles the redirect to the login page from the
-				// authorization server filter chain
-				.formLogin(Customizer.withDefaults());
+    @Bean
+    @Order(2)
+    public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
+            throws Exception {
+        http
+                .authorizeHttpRequests((authorize) -> authorize
+                        .requestMatchers(new AntPathRequestMatcher("/actuator/**"),
+                                new AntPathRequestMatcher("/oauth2/**"),
+                                new AntPathRequestMatcher("/**/*.json"),
+                                new AntPathRequestMatcher("/**/*.html")).permitAll()
+                        .anyRequest().authenticated()
+                )
+                .cors(Customizer.withDefaults())
+                .csrf((csrf) -> csrf.disable())
+//                .httpBasic(Customizer.withDefaults())
+//				// Form login handles the redirect to the login page from the
+//				// authorization server filter chain
+                .formLogin(Customizer.withDefaults())
+        ;
 
-		return http.build();
-	}
+        return http.build();
+    }
 
-	@Bean
-	public UserDetailsService userDetailsService() {
-		UserDetails userDetails = User.withDefaultPasswordEncoder()
-				.username("user")
-				.password("password")
-				.roles("USER")
-				.build();
+    @Bean
+    public UserDetailsService userDetailsService() {
+        UserDetails userDetails = User.withDefaultPasswordEncoder()
+                .username("user")
+                .password("password")
+                .roles("USER")
+                .build();
 
-		return new InMemoryUserDetailsManager(userDetails);
-	}
+        return new InMemoryUserDetailsManager(userDetails);
+    }
 
 }
