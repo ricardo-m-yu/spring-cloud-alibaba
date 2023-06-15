@@ -3,4 +3,16 @@ server:
 spring:
   application:
     name: consumer
+  boot:
+    admin:
+      client:
+        url: http://localhost:9002
 
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: ["*"]

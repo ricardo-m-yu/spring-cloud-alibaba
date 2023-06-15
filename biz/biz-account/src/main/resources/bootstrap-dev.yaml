@@ -1,12 +1,12 @@
 spring:
   cloud:
     nacos:
-      server-addr: http://192.168.1.115:8108/
+      server-addr: http://192.168.1.211:8108/
       discovery:
         group: dev
     sentinel:
       transport:
-        dashboard: 192.168.1.115:8109
+        dashboard: 192.168.1.211:8109
         port: 8900
 
 seata:
@@ -17,7 +17,7 @@ seata:
     vgroup-mapping:
       my-tx-group: seata-server
     grouplist:
-      seata-server: 192.168.1.115:8091
+      seata-server: 192.168.1.211:8091
 
 management:
   tracing:
@@ -25,7 +25,7 @@ management:
       probability: 1.0
   zipkin:
     tracing:
-      endpoint: http://192.168.1.115:8112/api/v2/spans
+      endpoint: http://192.168.1.211:8112/api/v2/spans
       connect-timeout: 3s
 
 logging:

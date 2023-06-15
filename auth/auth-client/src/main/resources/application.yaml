@@ -13,12 +13,14 @@ spring:
   security:
     oauth2:
       client:
+
         provider:
           test-provider1:
             issuer-uri: http://127.0.0.1:9000
         registration:
           oidc-client:
             client-id: oidc-client
+            client-secret: secret
             client-name: 测试客户端
             provider: test-provider1
             redirect-uri: '{baseUrl}/{action}/oauth2/code/{registrationId}'

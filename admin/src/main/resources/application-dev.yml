@@ -1,0 +1,10 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: admin
+
+management:
+  endpoint:
+    health:
+      show-details: always

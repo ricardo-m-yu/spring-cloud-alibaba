@@ -1,19 +1,19 @@
 spring:
   cloud:
     nacos:
-      server-addr: http://192.168.1.115:8108/
+      server-addr: http://192.168.1.211:8108/
       discovery:
         group: dev
     sentinel:
       transport:
-        dashboard: 192.168.1.115:9988
+        dashboard: 192.168.1.211:9988
         port: 8899
 
     # rocket mq 配置
     stream:
       rocketmq:
         binder:
-          name-server: 192.168.1.115:9876
+          name-server: 192.168.1.211:9876
 
 
       function:

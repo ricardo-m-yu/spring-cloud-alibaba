@@ -3,12 +3,12 @@ spring:
     web-application-type: reactive
   cloud:
     nacos:
-      server-addr: http://192.168.1.115:8108/
+      server-addr: http://192.168.1.211:8108/
       discovery:
         group: dev
     sentinel:
       transport:
-        dashboard: 192.168.1.115:9988
+        dashboard: 192.168.1.211:9988
         port: 8899
     gateway:
       discovery:
