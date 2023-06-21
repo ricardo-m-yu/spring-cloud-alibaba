@@ -9,9 +9,15 @@ logging:
     org.springframework.security: debug
     org.springframework.security.oauth2: debug
 
+    #    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: trace
+    #    org.springframework.security: debug
+    org.springframework.security.web.FilterChainProxy: trace # 过滤器执行顺序
+    org.springframework.security.web.access.ExceptionTranslationFilter: trace #异常处理
+
 spring:
   security:
     oauth2:
+
       client:
 
         provider:
@@ -29,3 +35,14 @@ spring:
               - openid
               - profile
               - all
+#          test-client:
+#            client-id: oidc-client
+#            client-secret: secret
+#            client-name: 测试客户端
+#            provider: test-provider1
+#            redirect-uri: '{baseUrl}/{action}/oauth2/code/{registrationId}'
+#            authorization-grant-type: authorization_code
+#            scope:
+#              - openid
+#              - profile
+#              - all

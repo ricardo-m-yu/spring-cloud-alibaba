@@ -77,6 +77,7 @@ public class AuthorizationServerConfig {
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
                 .redirectUri("http://www.baidu.com")
                 .redirectUri("http://127.0.0.1:8080/login/oauth2/code/oidc-client")
+                .redirectUri("http://127.0.0.1:9001/api/login/welcome")
                 .postLogoutRedirectUri("http://127.0.0.1:8080/")
                 .scope(OidcScopes.OPENID)
                 .scope(OidcScopes.PROFILE)
@@ -84,7 +85,10 @@ public class AuthorizationServerConfig {
                 .scope("message.write")
                 .scope("all")
                 // 设置 Client 需要页面审核授权
-                .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
+                .clientSettings(ClientSettings.builder()
+//                        .requireAuthorizationConsent(true)
+                                .
+                        build())
                 .build();
 
         return new InMemoryRegisteredClientRepository(oidcClient);

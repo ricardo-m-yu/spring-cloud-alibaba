@@ -28,8 +28,10 @@ import org.springframework.security.web.authentication.logout.LogoutSuccessHandl
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
+@EnableWebSecurity
 @Configuration(proxyBeanMethods = false)
 public class SecurityConfig {
+
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
