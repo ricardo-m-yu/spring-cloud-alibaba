@@ -5,6 +5,17 @@ server:
 #  level:
 #    org.springframework.security: trace
 
+
+spring:
+  application:
+    name: biz-account
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.211:8106/oauth2?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+
 logging:
   level:
     root: info

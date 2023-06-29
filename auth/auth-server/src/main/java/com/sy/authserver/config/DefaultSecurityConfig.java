@@ -21,6 +21,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.core.userdetails.User;
@@ -56,11 +57,12 @@ public class DefaultSecurityConfig {
                         .anyRequest().authenticated()
                 )
                 .cors(Customizer.withDefaults())
-                .csrf((csrf) -> csrf.disable())
+                .csrf(AbstractHttpConfigurer::disable)
 //                .httpBasic(Customizer.withDefaults())
 //				// Form login handles the redirect to the login page from the
 //				// authorization server filter chain
                 .formLogin(Customizer.withDefaults())
+//                .formLogin(v -> v.loginPage(""))
         ;
 
         return http.build();
