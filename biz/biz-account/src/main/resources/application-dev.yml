@@ -6,7 +6,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.1.211:3306/cloud_alibaba?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://192.168.1.211:3306/cloud_alibaba?useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: 113355
 mybatis:

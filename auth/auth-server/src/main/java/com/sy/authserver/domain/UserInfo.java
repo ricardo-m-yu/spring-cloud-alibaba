@@ -1,5 +1,6 @@
 package com.sy.authserver.domain;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,6 +11,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Data
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS)
 public class UserInfo implements UserDetails {
 
     @Serial
