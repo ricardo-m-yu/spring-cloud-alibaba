@@ -38,7 +38,7 @@
         <fastjson.version>1.2.73</fastjson.version>
         <mysql.version>8.0.32</mysql.version>
         <mybatis.version>3.0.2</mybatis.version>
-        <druid.version>1.1.10</druid.version>
+        <druid.version>1.1.21</druid.version>
         <knife4j.version>4.1.0</knife4j.version>
         <knife4j-gateway.version>4.1.0</knife4j-gateway.version>
         <rocketmq.version>2.2.2</rocketmq.version>

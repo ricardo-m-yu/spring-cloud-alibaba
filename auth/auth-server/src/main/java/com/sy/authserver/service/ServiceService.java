@@ -45,6 +45,7 @@ public class ServiceService {
                                 accessTokenTimeToLive(Duration.ofMinutes(60)).
                                 reuseRefreshTokens(true).
                                 refreshTokenTimeToLive(Duration.ofMinutes(720)).
+                                authorizationCodeTimeToLive(Duration.ofMinutes(60)).
                                 build()
                 )
                 // 设置 Client 需要页面审核授权
@@ -75,6 +76,7 @@ public class ServiceService {
                                 accessTokenTimeToLive(Duration.ofMinutes(60)).
                                 reuseRefreshTokens(true).
                                 refreshTokenTimeToLive(Duration.ofMinutes(720)).
+                                authorizationCodeTimeToLive(Duration.ofMinutes(60)).
                                 build()
                 )
                 // 设置 Client 需要页面审核授权
